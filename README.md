@@ -27,23 +27,23 @@ The [IDS-testbed](https://github.com/International-Data-Spaces-Association/IDS-t
    ``` 
 
 
-3. Copy the provided docker-compose-johnfli.yaml into the current (IDS-testbed) directory
+3. Copy the provided docker-compose-extended.yaml into the current (IDS-testbed) directory
    
    E.g.
    ```sh
-   cp ~/Downloads/docker-compose-johnfli.yaml ~/IDS-testbed/docker-compose-johnfli.yaml
+   cp ~/Downloads/docker-compose-extended.yaml ~/IDS-testbed/docker-compose-extended.yaml
    ```
 
 4. Make sure you have installed [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker Compose](https://docs.docker.com/engine/install/ubuntu/) on your machine. [OPTIONAL] You are also recommended to follow the [Post-installation steps for Linux](https://docs.docker.com/engine/install/linux-postinstall/). To start the testbed, run 
    
    ```sh
-   docker compose -f docker-compose-johnfli.yaml up -d
+   docker compose -f docker-compose-extended.yaml up -d
    ``` 
    
    OR
 
    ```sh
-   docker-compose -f docker-compose-johnfli.yaml up -d
+   docker-compose -f docker-compose-extended.yaml up -d
    ```
    
 5. Find the connectors and corresponding UIs in the following URLs:
@@ -59,12 +59,21 @@ The [IDS-testbed](https://github.com/International-Data-Spaces-Association/IDS-t
       - Credentials: connectorbuser/connectorbpw
 
 6. Run the [Postman collection](https://github.com/International-Data-Spaces-Association/IDS-testbed/blob/master/TestbedPreconfiguration.postman_collection.json) to start the tests. Current available components for testing are: Dataspace connector, DAPS, CA, Metadata Broker.
-   - We offer a customized [Postman collection](https://github.com/International-Data-Spaces-Association/IDS-testbed/blob/master/TestbedPreconfiguration.postman_collection.json) for the needs of our configuration, which you may use to verify the network connectivity and functionality.
+   - We offer a customized [Postman collection](TestbedExtendedPreconfiguration.postman_collection.json) for the needs of our configuration, which you may use to verify the network connectivity and functionality.
 
-7. Test the compatibility of your own developed component following the steps of the [Testbed User Guide](./TestbedUserGuide.md).
+## How to stop?
 
-8. Download the [Test Suite](https://gitlab.cc-asp.fraunhofer.de/ksa/ids-certification-testing) and follow the instructions to conduct automated tests for your own developed connector.
+To bring down the testbed, run 
+   
+   ```sh
+   docker compose -f docker-compose-extended.yaml down
+   ``` 
+   
+   OR
 
+   ```sh
+   docker-compose -f docker-compose-extended.yaml down
+   ```
 
 ## How to build custom UI images?
 
